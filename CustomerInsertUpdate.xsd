@@ -175,7 +175,7 @@
 
 <xs:complexType name="demographics">
 <xs:sequence>
-<xs:element name="birthDate" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="birthDate" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
