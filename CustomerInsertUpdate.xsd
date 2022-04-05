@@ -1,0 +1,488 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.5-b05 . --><xs:schema xmlns:tns="http://www.dmotorworks.com/pip-customer" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.dmotorworks.com/pip-customer">
+
+<xs:element name="CustomerPIPException" type="tns:CustomerPIPException"/>
+
+<xs:element name="NextCustNoUnavailableException" type="tns:NextCustNoUnavailableException"/>
+
+<xs:element name="getCustomerNumber" type="tns:getCustomerNumber"/>
+
+<xs:element name="getCustomerNumberBulk" type="tns:getCustomerNumberBulk"/>
+
+<xs:element name="getCustomerNumberBulkResponse" type="tns:getCustomerNumberBulkResponse"/>
+
+<xs:element name="getCustomerNumberResponse" type="tns:getCustomerNumberResponse"/>
+
+<xs:element name="insert" type="tns:insert"/>
+
+<xs:element name="insertBulk" type="tns:insertBulk"/>
+
+<xs:element name="insertBulkResponse" type="tns:insertBulkResponse"/>
+
+<xs:element name="insertResponse" type="tns:insertResponse"/>
+
+<xs:element name="read" type="tns:read"/>
+
+<xs:element name="readBulk" type="tns:readBulk"/>
+
+<xs:element name="readBulkResponse" type="tns:readBulkResponse"/>
+
+<xs:element name="readResponse" type="tns:readResponse"/>
+
+<xs:element name="update" type="tns:update"/>
+
+<xs:element name="updateBulk" type="tns:updateBulk"/>
+
+<xs:element name="updateBulkResponse" type="tns:updateBulkResponse"/>
+
+<xs:element name="updateResponse" type="tns:updateResponse"/>
+
+<xs:complexType name="insertBulk">
+<xs:sequence>
+<xs:element name="arg0" type="tns:authenticationToken" minOccurs="0"/>
+<xs:element name="arg1" type="tns:dealerId" minOccurs="0"/>
+<xs:element name="arg2" type="tns:userId" minOccurs="0"/>
+<xs:element name="arg3" type="tns:customerParty" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="authenticationToken">
+<xs:sequence>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dealerId">
+<xs:sequence>
+<xs:element name="dealerId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userId">
+<xs:sequence>
+<xs:element name="userId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="customerParty">
+<xs:sequence>
+<xs:element name="checksum" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="tns:partyId" minOccurs="0"/>
+<xs:element name="alternatePartyIds" type="tns:alternatePartyId" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="arStatus" type="tns:arStatus" minOccurs="0"/>
+<xs:element name="address" type="tns:addressBase" minOccurs="0"/>
+<xs:element name="contactInfo" type="tns:contactInfo" minOccurs="0"/>
+<xs:element name="demographics" type="tns:demographics" minOccurs="0"/>
+<xs:element name="employerName" type="xs:string" minOccurs="0"/>
+<xs:element name="fleetFlag" type="xs:string" minOccurs="0"/>
+<xs:element name="name1" type="tns:customerPartyName" minOccurs="0"/>
+<xs:element name="name2" type="tns:customerPartyName" minOccurs="0"/>
+<xs:element name="salesStatus" type="tns:salesStatus" minOccurs="0"/>
+<xs:element name="privacy" type="tns:privacy" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="insurance" type="tns:insurance" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="partyId">
+<xs:sequence>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alternatePartyId">
+<xs:sequence>
+<xs:element name="assigningPartyId" type="tns:assigningPartyId" minOccurs="0"/>
+<xs:element name="expirationDate" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="issuingState" type="xs:string" minOccurs="0"/>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="arStatus">
+<xs:sequence>
+<xs:element name="dealerField1" type="xs:string" minOccurs="0"/>
+<xs:element name="dealerField2" type="xs:string" minOccurs="0"/>
+<xs:element name="dealerField3" type="xs:string" minOccurs="0"/>
+<xs:element name="dealerField4" type="xs:string" minOccurs="0"/>
+<xs:element name="dealerField5" type="xs:string" minOccurs="0"/>
+<xs:element name="dealerField6" type="xs:string" minOccurs="0"/>
+<xs:element name="dealerField7" type="xs:string" minOccurs="0"/>
+<xs:element name="dealerField8" type="xs:string" minOccurs="0"/>
+<xs:element name="dealerField9" type="xs:string" minOccurs="0"/>
+<xs:element name="flag" type="xs:string" minOccurs="0"/>
+<xs:element name="groupCode" type="xs:string" minOccurs="0"/>
+<xs:element name="partsType" type="xs:string" minOccurs="0"/>
+<xs:element name="priceCode" type="xs:string" minOccurs="0"/>
+<xs:element name="roPriceCode" type="xs:string" minOccurs="0"/>
+<xs:element name="scheduleCode" type="xs:string" minOccurs="0"/>
+<xs:element name="taxCode" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addressBase">
+<xs:sequence>
+<xs:element name="addressLine" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="city" type="xs:string" minOccurs="0"/>
+<xs:element name="country" type="xs:string" minOccurs="0"/>
+<xs:element name="county" type="xs:string" minOccurs="0"/>
+<xs:element name="postalCode" type="xs:string" minOccurs="0"/>
+<xs:element name="stateOrProvince" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contactInfo">
+<xs:sequence>
+<xs:element name="contactTime" type="tns:contactTime" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="email" type="tns:email" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="fax" type="tns:fax" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="mainTelephoneNumber" type="tns:telephoneNumber" minOccurs="0"/>
+<xs:element name="preferredContactDay" type="tns:contactDay" minOccurs="0"/>
+<xs:element name="preferredContactMethod" type="tns:contactMethod" minOccurs="0"/>
+<xs:element name="preferredLanguage" type="xs:string" minOccurs="0"/>
+<xs:element name="telephoneNumber" type="tns:telephoneNumber" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="contactTime">
+<xs:sequence>
+<xs:element name="description" type="tns:contactTimeDesc" minOccurs="0"/>
+<xs:element name="time" type="tns:amPm" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="email">
+<xs:sequence>
+<xs:element name="desc" type="tns:emailDesc" minOccurs="0"/>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fax">
+<xs:sequence>
+<xs:element name="desc" type="tns:faxDesc" minOccurs="0"/>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="telephoneNumber">
+<xs:sequence>
+<xs:element name="desc" type="tns:telephoneNumberDesc" minOccurs="0"/>
+<xs:element name="exten" type="xs:string" minOccurs="0"/>
+<xs:element name="main" type="xs:boolean"/>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="demographics">
+<xs:sequence>
+<xs:element name="birthDate" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="customerPartyName">
+<xs:sequence>
+<xs:element name="companyName" type="xs:string" minOccurs="0"/>
+<xs:element name="firstName" type="xs:string" minOccurs="0"/>
+<xs:element name="fullName" type="xs:string" minOccurs="0"/>
+<xs:element name="lastName" type="xs:string" minOccurs="0"/>
+<xs:element name="middleName" type="xs:string" minOccurs="0"/>
+<xs:element name="nameType" type="tns:nameType" minOccurs="0"/>
+<xs:element name="suffix" type="xs:string" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="salesStatus">
+<xs:sequence>
+<xs:element name="prospect" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="privacy">
+<xs:sequence>
+<xs:element name="privacyInd" type="tns:privacyInd" minOccurs="0"/>
+<xs:element name="privacyType" type="tns:privacyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insurance">
+<xs:sequence>
+<xs:element name="agentName" type="xs:string" minOccurs="0"/>
+<xs:element name="agentPhone" type="xs:string" minOccurs="0"/>
+<xs:element name="companyName" type="xs:string" minOccurs="0"/>
+<xs:element name="other" type="xs:string" minOccurs="0"/>
+<xs:element name="policyNo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertBulkResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:customerSaveResult" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="customerSaveResult">
+<xs:complexContent>
+<xs:extension base="tns:abstractCustomerResult">
+<xs:sequence>
+<xs:element name="customerParty" type="tns:customerParty" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="abstractCustomerResult">
+<xs:sequence>
+<xs:element name="code" type="tns:resultCode" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CustomerPIPException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="read">
+<xs:sequence>
+<xs:element name="arg0" type="tns:authenticationToken" minOccurs="0"/>
+<xs:element name="arg1" type="tns:dealerId" minOccurs="0"/>
+<xs:element name="arg2" type="tns:userId" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="readResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:customerReadResult" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="customerReadResult">
+<xs:complexContent>
+<xs:extension base="tns:abstractCustomerResult">
+<xs:sequence>
+<xs:element name="customerParty" type="tns:customerParty" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="getCustomerNumber">
+<xs:sequence>
+<xs:element name="arg0" type="tns:authenticationToken" minOccurs="0"/>
+<xs:element name="arg1" type="tns:dealerId" minOccurs="0"/>
+<xs:element name="arg2" type="tns:userId" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCustomerNumberResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:customerNumberResult" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="customerNumberResult">
+<xs:complexContent>
+<xs:extension base="tns:abstractCustomerResult">
+<xs:sequence>
+<xs:element name="customerNumber" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="NextCustNoUnavailableException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBulk">
+<xs:sequence>
+<xs:element name="arg0" type="tns:authenticationToken" minOccurs="0"/>
+<xs:element name="arg1" type="tns:dealerId" minOccurs="0"/>
+<xs:element name="arg2" type="tns:userId" minOccurs="0"/>
+<xs:element name="arg3" type="tns:updatePassword" minOccurs="0"/>
+<xs:element name="arg4" type="tns:customerParty" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updatePassword">
+<xs:sequence>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBulkResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:customerSaveResult" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="readBulk">
+<xs:sequence>
+<xs:element name="arg0" type="tns:authenticationToken" minOccurs="0"/>
+<xs:element name="arg1" type="tns:dealerId" minOccurs="0"/>
+<xs:element name="arg2" type="tns:userId" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="readBulkResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:customerReadResult" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCustomerNumberBulk">
+<xs:sequence>
+<xs:element name="arg0" type="tns:authenticationToken" minOccurs="0"/>
+<xs:element name="arg1" type="tns:dealerId" minOccurs="0"/>
+<xs:element name="arg2" type="tns:userId" minOccurs="0"/>
+<xs:element name="arg3" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCustomerNumberBulkResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:customerNumberResult" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="update">
+<xs:sequence>
+<xs:element name="arg0" type="tns:authenticationToken" minOccurs="0"/>
+<xs:element name="arg1" type="tns:dealerId" minOccurs="0"/>
+<xs:element name="arg2" type="tns:userId" minOccurs="0"/>
+<xs:element name="arg3" type="tns:updatePassword" minOccurs="0"/>
+<xs:element name="arg4" type="tns:customerParty" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:customerSaveResult" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insert">
+<xs:sequence>
+<xs:element name="arg0" type="tns:authenticationToken" minOccurs="0"/>
+<xs:element name="arg1" type="tns:dealerId" minOccurs="0"/>
+<xs:element name="arg2" type="tns:userId" minOccurs="0"/>
+<xs:element name="arg3" type="tns:customerParty" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:customerSaveResult" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="assigningPartyId">
+<xs:restriction base="xs:string">
+<xs:enumeration value="DriversLicense"/>
+<xs:enumeration value="NationalID"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="contactTimeDesc">
+<xs:restriction base="xs:string">
+<xs:enumeration value="OTHER"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="amPm">
+<xs:restriction base="xs:string">
+<xs:enumeration value="AM"/>
+<xs:enumeration value="PM"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="emailDesc">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Home"/>
+<xs:enumeration value="Work"/>
+<xs:enumeration value="Cellular"/>
+<xs:enumeration value="Vehicle"/>
+<xs:enumeration value="PDA"/>
+<xs:enumeration value="Other"/>
+<xs:enumeration value="NotAvailable"/>
+<xs:enumeration value="CustomerDeclined"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="faxDesc">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Home"/>
+<xs:enumeration value="Work"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="telephoneNumberDesc">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Home"/>
+<xs:enumeration value="Work"/>
+<xs:enumeration value="Cellular"/>
+<xs:enumeration value="Pager"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="contactDay">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Monday"/>
+<xs:enumeration value="Tuesday"/>
+<xs:enumeration value="Wednesday"/>
+<xs:enumeration value="Thursday"/>
+<xs:enumeration value="Friday"/>
+<xs:enumeration value="Saturday"/>
+<xs:enumeration value="Sunday"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="contactMethod">
+<xs:restriction base="xs:string">
+<xs:enumeration value="WorkFax"/>
+<xs:enumeration value="MainEmail"/>
+<xs:enumeration value="HomeFax"/>
+<xs:enumeration value="Mail"/>
+<xs:enumeration value="Pager"/>
+<xs:enumeration value="MainTelephone"/>
+<xs:enumeration value="DoNotContact"/>
+<xs:enumeration value="TextMessage"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="nameType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Person"/>
+<xs:enumeration value="Business"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="privacyInd">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ON"/>
+<xs:enumeration value="OFF"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="privacyType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="EMAIL"/>
+<xs:enumeration value="MAIL"/>
+<xs:enumeration value="PHONE"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="resultCode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="success"/>
+<xs:enumeration value="failure"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>
